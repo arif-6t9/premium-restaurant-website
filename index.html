@@ -1,0 +1,2902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ARIF RESTAURANT — Premium Dining</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#f7f4ed;
+    --surface:#ffffff;
+    --surface2:#f1eee6;
+    --text:#171914;
+    --text2:#555850;
+    --muted:#888c84;
+    --gold:#b88935;
+    --gold2:#d3aa62;
+    --line:#e4dfd4;
+    --dark:#151914;
+    --shadow:0 22px 60px rgba(37,31,20,.10);
+
+    --serif:"Playfair Display",serif;
+    --sans:"DM Sans",sans-serif;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+button,input,select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:min(1280px,92%);
+    margin:auto;
+}
+
+.section{
+    padding:76px 0;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-head{
+    text-align:center;
+    max-width:650px;
+    margin:0 auto 40px;
+}
+
+.section-title{
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:clamp(38px,4.4vw,62px);
+    line-height:1.06;
+}
+
+.section-text{
+    color:var(--text2);
+    font-size:13px;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    z-index:1000;
+    top:17px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:min(1280px,94%);
+    height:70px;
+
+    padding:0 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.86);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(120,100,60,.13);
+    border-radius:18px;
+
+    box-shadow:0 15px 45px rgba(50,42,28,.08);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-mark{
+    width:40px;
+    height:40px;
+
+    border:1px solid var(--gold2);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    color:var(--gold);
+    font-size:17px;
+}
+
+.logo-text strong{
+    display:block;
+    font-family:var(--serif);
+    font-size:17px;
+    letter-spacing:1px;
+}
+
+.logo-text span{
+    display:block;
+    color:#8c8e87;
+    font-size:8px;
+    letter-spacing:3px;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    color:#555951;
+    font-size:11px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--gold);
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+.book-btn{
+    border:0;
+    background:var(--dark);
+    color:#fff;
+
+    padding:12px 18px;
+    border-radius:100px;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.book-btn:hover{
+    background:var(--gold);
+    transform:translateY(-2px);
+}
+
+.cart-btn{
+    position:relative;
+
+    width:42px;
+    height:42px;
+
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--text);
+
+    border-radius:50%;
+}
+
+.cart-count{
+    position:absolute;
+    right:-3px;
+    top:-3px;
+
+    width:17px;
+    height:17px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:var(--gold);
+    color:#fff;
+
+    font-size:9px;
+    font-weight:bold;
+}
+
+.menu-toggle{
+    display:none;
+
+    width:42px;
+    height:42px;
+
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:50%;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    min-height:720px;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247,244,237,.98) 0%,
+            rgba(247,244,237,.91) 37%,
+            rgba(247,244,237,.30) 67%,
+            rgba(247,244,237,.05) 100%
+        ),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=90")
+        center/cover;
+}
+
+.hero-content{
+    width:min(1280px,92%);
+    margin:auto;
+    padding-top:55px;
+}
+
+.hero-kicker{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:var(--gold);
+
+    font-size:10px;
+    font-weight:700;
+
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.hero-kicker::before{
+    content:"";
+    width:40px;
+    height:1px;
+    background:var(--gold);
+}
+
+.hero h1{
+    max-width:760px;
+
+    font-family:var(--serif);
+
+    font-size:clamp(56px,7vw,100px);
+    line-height:.94;
+
+    margin:20px 0 18px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+    font-style:italic;
+}
+
+.hero-description{
+    max-width:510px;
+
+    color:#5d6159;
+
+    font-size:14px;
+    line-height:1.8;
+
+    margin-bottom:27px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:11px;
+}
+
+.btn{
+    min-height:48px;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:0 23px;
+
+    border-radius:5px;
+
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.btn-gold{
+    background:var(--gold);
+    color:#fff;
+
+    box-shadow:0 12px 28px rgba(184,137,53,.20);
+}
+
+.btn-gold:hover{
+    background:#9e7228;
+    transform:translateY(-2px);
+}
+
+.btn-dark{
+    background:var(--dark);
+    color:#fff;
+}
+
+.btn-dark:hover{
+    background:#292d28;
+    transform:translateY(-2px);
+}
+
+.hero-stamp{
+    position:absolute;
+
+    right:7%;
+    bottom:60px;
+
+    width:150px;
+    height:150px;
+
+    border:1px solid rgba(184,137,53,.55);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(8px);
+}
+
+.hero-stamp strong{
+    display:block;
+
+    color:var(--gold);
+    font-family:var(--serif);
+    font-size:23px;
+}
+
+.hero-stamp small{
+    display:block;
+    color:#77796f;
+    font-size:7px;
+    letter-spacing:2px;
+    margin-top:5px;
+}
+
+/* =========================
+FEATURES
+========================= */
+
+.features{
+    background:#fff;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.feature{
+    min-height:135px;
+
+    padding:27px 25px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    border-right:1px solid var(--line);
+}
+
+.feature:last-child{
+    border-right:0;
+}
+
+.feature-icon{
+    width:46px;
+    height:46px;
+
+    flex:none;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid #d9bd85;
+    border-radius:50%;
+
+    color:var(--gold);
+    font-size:17px;
+}
+
+.feature h3{
+    font-family:var(--serif);
+    font-size:17px;
+    margin-bottom:5px;
+}
+
+.feature p{
+    color:var(--muted);
+    font-size:10px;
+    line-height:1.6;
+}
+
+/* =========================
+MENU
+========================= */
+
+.menu-section{
+    background:var(--bg);
+}
+
+.menu-tabs{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+
+    margin-bottom:30px;
+}
+
+.menu-tab{
+    border:1px solid var(--line);
+    background:#fff;
+
+    color:#70736c;
+
+    padding:9px 17px;
+
+    border-radius:100px;
+
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.5px;
+
+    transition:.3s;
+}
+
+.menu-tab.active,
+.menu-tab:hover{
+    background:var(--dark);
+    border-color:var(--dark);
+    color:#fff;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:17px;
+}
+
+.food-card{
+    background:#fff;
+
+    border:1px solid #e6e1d7;
+    border-radius:8px;
+
+    overflow:hidden;
+
+    transition:.35s;
+}
+
+.food-card:hover{
+    transform:translateY(-7px);
+    box-shadow:var(--shadow);
+}
+
+.food-img{
+    height:205px;
+    position:relative;
+    overflow:hidden;
+}
+
+.food-img img{
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.food-card:hover .food-img img{
+    transform:scale(1.07);
+}
+
+.food-tag{
+    position:absolute;
+    top:11px;
+    left:11px;
+
+    padding:6px 9px;
+
+    background:rgba(255,255,255,.91);
+    color:var(--gold);
+
+    font-size:7px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    border-radius:3px;
+}
+
+.food-info{
+    padding:17px;
+}
+
+.food-top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.food-name{
+    font-family:var(--serif);
+    font-size:19px;
+}
+
+.food-price{
+    color:var(--gold);
+    font-size:13px;
+    font-weight:700;
+}
+
+.food-desc{
+    color:#858880;
+    font-size:10px;
+    line-height:1.6;
+    margin:8px 0;
+}
+
+.food-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.stars{
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.add-btn{
+    width:31px;
+    height:31px;
+
+    border:1px solid #ddd5c7;
+    background:#fff;
+
+    border-radius:50%;
+
+    color:var(--gold);
+    font-size:17px;
+
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:var(--gold);
+    color:#fff;
+    border-color:var(--gold);
+}
+
+/* =========================
+STORY
+========================= */
+
+.story{
+    background:#fff;
+}
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.story-image{
+    height:500px;
+    position:relative;
+}
+
+.story-image img{
+    height:100%;
+    object-fit:cover;
+}
+
+.story-image::after{
+    content:"";
+
+    position:absolute;
+    inset:17px;
+
+    border:1px solid rgba(255,255,255,.7);
+}
+
+.story-content p{
+    color:var(--text2);
+    font-size:13px;
+    line-height:1.9;
+    margin-top:15px;
+}
+
+.story-sign{
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    margin-top:25px;
+}
+
+.story-line{
+    width:45px;
+    height:1px;
+    background:var(--gold);
+}
+
+.story-sign span{
+    color:var(--gold);
+    font-family:var(--serif);
+    font-size:20px;
+}
+
+/* =========================
+SIGNATURE
+========================= */
+
+.signature{
+    background:#f1eee6;
+}
+
+.signature-grid{
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:18px;
+}
+
+.signature-main{
+    height:420px;
+    position:relative;
+    overflow:hidden;
+}
+
+.signature-main img{
+    height:100%;
+    object-fit:cover;
+}
+
+.signature-main::after,
+.signature-small::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        transparent 35%,
+        rgba(0,0,0,.78)
+    );
+}
+
+.signature-content{
+    position:absolute;
+    z-index:2;
+
+    left:30px;
+    bottom:27px;
+
+    color:#fff;
+}
+
+.signature-content h3{
+    font-family:var(--serif);
+    font-size:31px;
+}
+
+.signature-content p{
+    color:#ddd;
+    font-size:11px;
+    margin-top:4px;
+}
+
+.signature-content span{
+    display:block;
+    color:#e0b96e;
+    margin-top:8px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.signature-side{
+    display:grid;
+    grid-template-rows:1fr 1fr;
+    gap:18px;
+}
+
+.signature-small{
+    position:relative;
+    overflow:hidden;
+}
+
+.signature-small img{
+    height:100%;
+    object-fit:cover;
+
+    transition:.6s;
+}
+
+.signature-small:hover img{
+    transform:scale(1.07);
+}
+
+.small-content{
+    position:absolute;
+    z-index:2;
+    bottom:19px;
+    left:20px;
+    color:#fff;
+}
+
+.small-content h4{
+    font-family:var(--serif);
+    font-size:21px;
+}
+
+.small-content span{
+    color:#e0b96e;
+    font-size:11px;
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.gallery{
+    background:#fff;
+}
+
+.gallery-grid{
+    display:grid;
+
+    grid-template-columns:1.3fr .7fr .7fr 1fr;
+
+    grid-template-rows:205px 205px;
+
+    gap:10px;
+}
+
+.gallery-item{
+    overflow:hidden;
+}
+
+.gallery-item:first-child{
+    grid-row:span 2;
+}
+
+.gallery-item:nth-child(4){
+    grid-row:span 2;
+}
+
+.gallery-item img{
+    height:100%;
+    object-fit:cover;
+
+    transition:.6s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.07);
+}
+
+/* =========================
+REVIEWS
+========================= */
+
+.reviews{
+    background:var(--dark);
+    color:#fff;
+}
+
+.reviews .section-text{
+    color:#a5aaa3;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.review{
+    padding:27px;
+
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.09);
+
+    border-radius:8px;
+}
+
+.review-stars{
+    color:#d6ad61;
+    font-size:10px;
+    margin-bottom:15px;
+}
+
+.review p{
+    color:#c0c4be;
+    font-family:var(--serif);
+    font-size:17px;
+    line-height:1.6;
+}
+
+.review-user{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    margin-top:20px;
+}
+
+.avatar{
+    width:36px;
+    height:36px;
+
+    border:1px solid rgba(211,170,98,.4);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    color:#d6ad61;
+    font-family:var(--serif);
+}
+
+.review-user strong{
+    display:block;
+    font-size:11px;
+}
+
+.review-user small{
+    display:block;
+    color:#747a73;
+    font-size:8px;
+    margin-top:2px;
+}
+
+/* =========================
+RESERVATION
+========================= */
+
+.reservation{
+    background:
+        linear-gradient(
+            90deg,
+            rgba(247,244,237,.97),
+            rgba(247,244,237,.77)
+        ),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+
+    padding:88px 0;
+}
+
+.reserve-box{
+    max-width:760px;
+    margin:auto;
+    text-align:center;
+}
+
+.reserve-box p{
+    max-width:550px;
+    margin:16px auto 25px;
+
+    color:#62665f;
+
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    background:#10130f;
+    color:#fff;
+}
+
+.footer-main{
+    padding:55px 0 38px;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-brand p{
+    max-width:290px;
+
+    color:#81867e;
+
+    font-size:10px;
+    line-height:1.8;
+
+    margin-top:14px;
+}
+
+.footer-title{
+    color:#d6ad61;
+
+    font-size:9px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    margin-bottom:16px;
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.footer-links a{
+    color:#858a82;
+    font-size:10px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#d6ad61;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.09);
+
+    padding:18px 0;
+
+    display:flex;
+    justify-content:space-between;
+
+    color:#62685f;
+
+    font-size:8px;
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp{
+    position:fixed;
+    z-index:900;
+
+    right:20px;
+    bottom:20px;
+
+    width:50px;
+    height:50px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:#20a864;
+    color:#fff;
+
+    font-size:20px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================
+CART
+========================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    z-index:1400;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.overlay.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.cart-drawer{
+    position:fixed;
+    z-index:1500;
+
+    top:0;
+    right:0;
+
+    width:min(420px,92%);
+    height:100vh;
+
+    padding:25px;
+
+    background:#fff;
+
+    box-shadow:-20px 0 60px rgba(0,0,0,.15);
+
+    transform:translateX(100%);
+    transition:.4s;
+
+    overflow:auto;
+}
+
+.cart-drawer.show{
+    transform:translateX(0);
+}
+
+.cart-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding-bottom:18px;
+
+    border-bottom:1px solid var(--line);
+}
+
+.cart-header h2{
+    font-family:var(--serif);
+}
+
+.close{
+    width:36px;
+    height:36px;
+
+    border:1px solid var(--line);
+    background:#fff;
+
+    border-radius:50%;
+}
+
+.cart-items{
+    padding:18px 0;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--line);
+}
+
+.cart-item img{
+    width:55px;
+    height:55px;
+
+    object-fit:cover;
+    border-radius:5px;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info strong{
+    font-family:var(--serif);
+    font-size:14px;
+}
+
+.cart-item-info span{
+    display:block;
+    color:var(--gold);
+    font-size:10px;
+    margin-top:4px;
+}
+
+.remove{
+    border:0;
+    background:transparent;
+    color:#999;
+    font-size:18px;
+}
+
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+
+    padding:18px 0;
+
+    border-top:1px solid var(--line);
+
+    font-family:var(--serif);
+    font-size:21px;
+}
+
+.cart-total span:last-child{
+    color:var(--gold);
+}
+
+/* =========================
+MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    z-index:1700;
+
+    inset:0;
+
+    display:none;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:rgba(0,0,0,.52);
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(480px,100%);
+
+    padding:28px;
+
+    background:#fff;
+
+    border-radius:10px;
+
+    box-shadow:var(--shadow);
+}
+
+.modal-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:20px;
+}
+
+.modal-head h2{
+    font-family:var(--serif);
+}
+
+.form{
+    display:grid;
+    gap:11px;
+}
+
+.form input,
+.form select{
+    width:100%;
+    height:45px;
+
+    padding:0 13px;
+
+    border:1px solid var(--line);
+    border-radius:4px;
+
+    background:#faf9f5;
+    color:var(--text);
+
+    outline:none;
+}
+
+.form input:focus,
+.form select:focus{
+    border-color:var(--gold);
+}
+
+.form .btn{
+    border:0;
+    margin-top:4px;
+}
+
+/* =========================
+REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(22px);
+
+    transition:
+        opacity .75s ease,
+        transform .75s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:1050px){
+
+    .nav-links{
+        gap:16px;
+    }
+
+    .menu-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-main{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:760px){
+
+    .navbar{
+        top:9px;
+        height:62px;
+    }
+
+    .nav-links{
+        position:absolute;
+
+        top:70px;
+        left:0;
+        right:0;
+
+        display:none;
+
+        flex-direction:column;
+        align-items:stretch;
+
+        padding:13px;
+
+        background:#fff;
+
+        border:1px solid var(--line);
+        border-radius:12px;
+
+        box-shadow:var(--shadow);
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .nav-links a{
+        padding:11px;
+    }
+
+    .book-btn{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .hero{
+        min-height:680px;
+
+        background:
+            linear-gradient(
+                rgba(247,244,237,.87),
+                rgba(247,244,237,.94)
+            ),
+            url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85")
+            center/cover;
+    }
+
+    .hero-content{
+        padding-top:75px;
+    }
+
+    .hero h1{
+        font-size:57px;
+    }
+
+    .hero-stamp{
+        display:none;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature{
+        min-height:120px;
+    }
+
+    .feature:nth-child(2){
+        border-right:0;
+    }
+
+    .feature:nth-child(3),
+    .feature:nth-child(4){
+        border-top:1px solid var(--line);
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .story-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .story-image{
+        height:370px;
+    }
+
+    .signature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .signature-main{
+        height:340px;
+    }
+
+    .signature-side{
+        height:340px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:170px 170px 170px;
+    }
+
+    .gallery-item:first-child,
+    .gallery-item:nth-child(4){
+        grid-row:auto;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:500px){
+
+    .section{
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:49px;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        width:215px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        border-right:0!important;
+        border-bottom:1px solid var(--line);
+    }
+
+    .feature:last-child{
+        border-bottom:0;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .food-img{
+        height:215px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:8px;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+
+        <div class="logo-mark">♨</div>
+
+        <div class="logo-text">
+            <strong>ARIF</strong>
+            <span>RESTAURANT</span>
+        </div>
+
+    </a>
+
+    <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#story">About</a>
+        <a href="#signature">Specials</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="nav-actions">
+
+        <button class="book-btn" onclick="openReservation()">
+            BOOK A TABLE
+        </button>
+
+        <button class="cart-btn" onclick="openCart()">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+            ☰
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="hero-kicker">
+            Fine Dining Experience
+        </div>
+
+        <h1>
+            Good Food.<br>
+            <span>Great Mood.</span>
+        </h1>
+
+        <p class="hero-description">
+            Welcome to ARIF RESTAURANT — where refined flavors,
+            elegant surroundings and warm hospitality come together.
+        </p>
+
+        <div class="hero-actions">
+
+            <button
+                class="btn btn-gold"
+                onclick="openReservation()"
+            >
+                RESERVE YOUR TABLE
+            </button>
+
+            <a
+                href="#menu"
+                class="btn btn-dark"
+            >
+                EXPLORE MENU
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-stamp">
+
+        <div>
+            <strong>2026</strong>
+
+            <small>
+                EST. ARIF RESTAURANT
+            </small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="features">
+
+    <div class="feature">
+
+        <div class="feature-icon">✦</div>
+
+        <div>
+            <h3>Fresh Ingredients</h3>
+            <p>Carefully selected ingredients every day.</p>
+        </div>
+
+    </div>
+
+    <div class="feature">
+
+        <div class="feature-icon">♨</div>
+
+        <div>
+            <h3>Expert Chefs</h3>
+            <p>Thoughtfully crafted by skilled chefs.</p>
+        </div>
+
+    </div>
+
+    <div class="feature">
+
+        <div class="feature-icon">◇</div>
+
+        <div>
+            <h3>Premium Service</h3>
+            <p>Warm hospitality for every guest.</p>
+        </div>
+
+    </div>
+
+    <div class="feature">
+
+        <div class="feature-icon">⌂</div>
+
+        <div>
+            <h3>Cozy Ambience</h3>
+            <p>An elegant place to relax and connect.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="section menu-section" id="menu">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <div class="eyebrow">
+                Our Menu
+            </div>
+
+            <h2 class="section-title">
+                Crafted For Your Table
+            </h2>
+
+            <p class="section-text">
+                Explore a carefully selected menu created
+                for memorable dining moments.
+            </p>
+
+        </div>
+
+
+        <div class="menu-tabs">
+
+            <button
+                class="menu-tab active"
+                onclick="filterMenu('all',this)"
+            >
+                ALL
+            </button>
+
+            <button
+                class="menu-tab"
+                onclick="filterMenu('starter',this)"
+            >
+                STARTERS
+            </button>
+
+            <button
+                class="menu-tab"
+                onclick="filterMenu('main',this)"
+            >
+                MAIN COURSE
+            </button>
+
+            <button
+                class="menu-tab"
+                onclick="filterMenu('dessert',this)"
+            >
+                DESSERT
+            </button>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+            <!-- 1 -->
+
+            <div class="food-card reveal" data-category="starter">
+
+                <div class="food-img">
+
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85">
+
+                    <span class="food-tag">
+                        CHEF'S PICK
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="food-top">
+
+                        <h3 class="food-name">
+                            Signature Platter
+                        </h3>
+
+                        <span class="food-price">
+                            $12.90
+                        </span>
+
+                    </div>
+
+                    <p class="food-desc">
+                        A refined selection of house favorites.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Signature Platter',
+                                12.90,
+                                'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85'
+                            )"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="food-card reveal" data-category="main">
+
+                <div class="food-img">
+
+                    <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85">
+
+                    <span class="food-tag">
+                        POPULAR
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="food-top">
+
+                        <h3 class="food-name">
+                            Grilled Chicken
+                        </h3>
+
+                        <span class="food-price">
+                            $14.50
+                        </span>
+
+                    </div>
+
+                    <p class="food-desc">
+                        Herb grilled chicken with seasonal vegetables.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Grilled Chicken',
+                                14.50,
+                                'https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=85'
+                            )"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 3 -->
+
+            <div class="food-card reveal" data-category="main">
+
+                <div class="food-img">
+
+                    <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85">
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="food-top">
+
+                        <h3 class="food-name">
+                            Creamy Pasta
+                        </h3>
+
+                        <span class="food-price">
+                            $11.90
+                        </span>
+
+                    </div>
+
+                    <p class="food-desc">
+                        Handmade pasta with a rich creamy sauce.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Creamy Pasta',
+                                11.90,
+                                'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=85'
+                            )"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- 4 -->
+
+            <div class="food-card reveal" data-category="dessert">
+
+                <div class="food-img">
+
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85">
+
+                    <span class="food-tag">
+                        SWEET
+                    </span>
+
+                </div>
+
+                <div class="food-info">
+
+                    <div class="food-top">
+
+                        <h3 class="food-name">
+                            Chocolate Cake
+                        </h3>
+
+                        <span class="food-price">
+                            $6.50
+                        </span>
+
+                    </div>
+
+                    <p class="food-desc">
+                        Dark chocolate cake with silky ganache.
+                    </p>
+
+                    <div class="food-bottom">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart(
+                                'Chocolate Cake',
+                                6.50,
+                                'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85'
+                            )"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section class="section story" id="story">
+
+    <div class="container">
+
+        <div class="story-grid">
+
+            <div class="story-image reveal">
+
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=90">
+
+            </div>
+
+            <div class="story-content reveal">
+
+                <div class="eyebrow">
+                    Our Story
+                </div>
+
+                <h2 class="section-title">
+                    More Than A Meal.
+                    <br>
+                    It's An Experience.
+                </h2>
+
+                <p>
+                    ARIF RESTAURANT was created around one simple
+                    philosophy: exceptional food deserves an equally
+                    exceptional setting.
+                </p>
+
+                <p>
+                    Every plate is thoughtfully prepared and every
+                    detail of the dining experience is designed
+                    to make our guests feel welcome.
+                </p>
+
+                <div class="story-sign">
+
+                    <div class="story-line"></div>
+
+                    <span>
+                        ARIF
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SIGNATURE -->
+
+<section class="section signature" id="signature">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <div class="eyebrow">
+                Chef's Selection
+            </div>
+
+            <h2 class="section-title">
+                Signature Experiences
+            </h2>
+
+        </div>
+
+
+        <div class="signature-grid">
+
+            <div class="signature-main reveal">
+
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=90">
+
+                <div class="signature-content">
+
+                    <h3>
+                        The ARIF Signature
+                    </h3>
+
+                    <p>
+                        A beautifully composed culinary experience.
+                    </p>
+
+                    <span>
+                        $24.90
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="signature-side">
+
+                <div class="signature-small reveal">
+
+                    <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=900&q=85">
+
+                    <div class="small-content">
+
+                        <h4>
+                            Chef's Special
+                        </h4>
+
+                        <span>
+                            $18.90
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="signature-small reveal">
+
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85">
+
+                    <div class="small-content">
+
+                        <h4>
+                            Golden Dessert
+                        </h4>
+
+                        <span>
+                            $7.90
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section class="section gallery">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <div class="eyebrow">
+                Visual Journey
+            </div>
+
+            <h2 class="section-title">
+                A Taste Of ARIF
+            </h2>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1000&q=85">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=900&q=85">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="section reviews" id="reviews">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+
+            <div class="eyebrow">
+                Guest Stories
+            </div>
+
+            <h2 class="section-title">
+                Loved By Our Guests
+            </h2>
+
+        </div>
+
+
+        <div class="review-grid">
+
+            <div class="review reveal">
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Beautiful atmosphere, excellent food and
+                    genuinely thoughtful service.”
+                </p>
+
+                <div class="review-user">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>
+                            Ahmed Rahman
+                        </strong>
+
+                        <small>
+                            Verified Guest
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="review reveal">
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “Every detail felt carefully considered.
+                    A wonderful place for a special evening.”
+                </p>
+
+                <div class="review-user">
+
+                    <div class="avatar">
+                        S
+                    </div>
+
+                    <div>
+                        <strong>
+                            Sarah Khan
+                        </strong>
+
+                        <small>
+                            Verified Guest
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="review reveal">
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    “The food presentation was exceptional and
+                    the overall experience was unforgettable.”
+                </p>
+
+                <div class="review-user">
+
+                    <div class="avatar">
+                        R
+                    </div>
+
+                    <div>
+                        <strong>
+                            Rafi Islam
+                        </strong>
+
+                        <small>
+                            Verified Guest
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- RESERVATION -->
+
+<section class="reservation" id="contact">
+
+    <div class="container">
+
+        <div class="reserve-box reveal">
+
+            <div class="eyebrow">
+                Your Table Awaits
+            </div>
+
+            <h2 class="section-title">
+                Make Tonight
+                <br>
+                <em>Memorable.</em>
+            </h2>
+
+            <p>
+                Reserve your table and enjoy an evening
+                crafted around exceptional food and atmosphere.
+            </p>
+
+            <button
+                class="btn btn-gold"
+                onclick="openReservation()"
+            >
+                BOOK A TABLE
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a class="logo">
+
+                    <div class="logo-mark">
+                        ♨
+                    </div>
+
+                    <div class="logo-text">
+
+                        <strong style="color:#fff;">
+                            ARIF
+                        </strong>
+
+                        <span>
+                            RESTAURANT
+                        </span>
+
+                    </div>
+
+                </a>
+
+                <p>
+                    A refined dining destination where
+                    memorable flavors meet elegant hospitality.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Explore
+                </div>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#story">About</a>
+                    <a href="#reviews">Reviews</a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Contact
+                </div>
+
+                <div class="footer-links">
+                    <a href="#">
+                        +880 1234 567890
+                    </a>
+
+                    <a href="#">
+                        info@arifrestaurant.com
+                    </a>
+
+                    <a href="#">
+                        Dhaka, Bangladesh
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <div class="footer-title">
+                    Follow
+                </div>
+
+                <div class="footer-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Facebook</a>
+                    <a href="#">TikTok</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 ARIF RESTAURANT. All rights reserved.
+            </span>
+
+            <span>
+                Crafted by ARIF
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/8801234567890"
+    target="_blank"
+>
+    ☎
+</a>
+
+
+<!-- CART OVERLAY -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeCart()"
+></div>
+
+
+<!-- CART DRAWER -->
+
+<div
+    class="cart-drawer"
+    id="cartDrawer"
+>
+
+    <div class="cart-header">
+
+        <h2>
+            Your Selection
+        </h2>
+
+        <button
+            class="close"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+    </div>
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+        <p style="color:#888;font-size:12px;">
+            Your cart is empty.
+        </p>
+    </div>
+
+    <div class="cart-total">
+
+        <span>
+            Total
+        </span>
+
+        <span id="cartTotal">
+            $0.00
+        </span>
+
+    </div>
+
+    <button
+        class="btn btn-gold"
+        style="width:100%;border:0;"
+        onclick="checkout()"
+    >
+        ORDER VIA WHATSAPP
+    </button>
+
+</div>
+
+
+<!-- RESERVATION MODAL -->
+
+<div
+    class="modal"
+    id="reservationModal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-head">
+
+            <h2>
+                Reserve Your Table
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeReservation()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="form">
+
+            <input
+                id="rName"
+                placeholder="Your Name"
+            >
+
+            <input
+                id="rPhone"
+                placeholder="Phone Number"
+            >
+
+            <input
+                id="rDate"
+                type="date"
+            >
+
+            <select id="rGuests">
+
+                <option value="">
+                    Number of Guests
+                </option>
+
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5 Guests</option>
+                <option>6+ Guests</option>
+
+            </select>
+
+            <select id="rTime">
+
+                <option value="">
+                    Preferred Time
+                </option>
+
+                <option>6:00 PM</option>
+                <option>7:00 PM</option>
+                <option>8:00 PM</option>
+                <option>9:00 PM</option>
+
+            </select>
+
+            <button
+                class="btn btn-gold"
+                onclick="submitReservation()"
+            >
+                CONFIRM RESERVATION
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    document
+        .getElementById("navLinks")
+        .classList.toggle("show");
+
+}
+
+
+/* =========================
+FILTER
+========================= */
+
+function filterMenu(category,button){
+
+    document
+        .querySelectorAll(".menu-tab")
+        .forEach(tab=>{
+            tab.classList.remove("active");
+        });
+
+    button.classList.add("active");
+
+    document
+        .querySelectorAll(".food-card")
+        .forEach(card=>{
+
+            if(category==="all"){
+                card.style.display="";
+            }else{
+                card.style.display =
+                    card.dataset.category===category
+                    ? ""
+                    : "none";
+            }
+
+        });
+
+}
+
+
+/* =========================
+CART
+========================= */
+
+let cart=[];
+
+
+function addToCart(name,price,image){
+
+    cart.push({
+        name:name,
+        price:price,
+        image:image
+    });
+
+    updateCart();
+    openCart();
+
+}
+
+
+function updateCart(){
+
+    const items=
+        document.getElementById("cartItems");
+
+    const count=
+        document.getElementById("cartCount");
+
+    const total=
+        document.getElementById("cartTotal");
+
+    count.textContent=cart.length;
+
+    if(cart.length===0){
+
+        items.innerHTML=`
+            <p style="color:#888;font-size:12px;">
+                Your cart is empty.
+            </p>
+        `;
+
+        total.textContent="$0.00";
+
+        return;
+    }
+
+    let sum=0;
+
+    items.innerHTML="";
+
+    cart.forEach((item,index)=>{
+
+        sum+=item.price;
+
+        items.innerHTML+=`
+
+            <div class="cart-item">
+
+                <img src="${item.image}">
+
+                <div class="cart-item-info">
+
+                    <strong>
+                        ${item.name}
+                    </strong>
+
+                    <span>
+                        $${item.price.toFixed(2)}
+                    </span>
+
+                </div>
+
+                <button
+                    class="remove"
+                    onclick="removeItem(${index})"
+                >
+                    ×
+                </button>
+
+            </div>
+
+        `;
+
+    });
+
+    total.textContent="$"+sum.toFixed(2);
+
+}
+
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+function openCart(){
+
+    document
+        .getElementById("cartDrawer")
+        .classList.add("show");
+
+    document
+        .getElementById("overlay")
+        .classList.add("show");
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("cartDrawer")
+        .classList.remove("show");
+
+    document
+        .getElementById("overlay")
+        .classList.remove("show");
+
+}
+
+
+/* =========================
+CHECKOUT
+========================= */
+
+function checkout(){
+
+    if(cart.length===0){
+
+        alert("Your cart is empty.");
+
+        return;
+    }
+
+    let message=
+        "Hello ARIF RESTAURANT,%0A%0A";
+
+    message+=
+        "I would like to order:%0A";
+
+    let total=0;
+
+    cart.forEach(item=>{
+
+        message+=
+            "• "+item.name+
+            " - $"+item.price.toFixed(2)+
+            "%0A";
+
+        total+=item.price;
+
+    });
+
+    message+=
+        "%0ATotal: $"+
+        total.toFixed(2);
+
+    window.open(
+        "https://wa.me/8801234567890?text="+message,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+RESERVATION
+========================= */
+
+function openReservation(){
+
+    document
+        .getElementById("reservationModal")
+        .classList.add("show");
+
+}
+
+
+function closeReservation(){
+
+    document
+        .getElementById("reservationModal")
+        .classList.remove("show");
+
+}
+
+
+function submitReservation(){
+
+    const name=
+        document.getElementById("rName").value;
+
+    const phone=
+        document.getElementById("rPhone").value;
+
+    const date=
+        document.getElementById("rDate").value;
+
+    const guests=
+        document.getElementById("rGuests").value;
+
+    const time=
+        document.getElementById("rTime").value;
+
+    if(
+        !name ||
+        !phone ||
+        !date ||
+        !guests ||
+        !time
+    ){
+
+        alert("Please complete all fields.");
+
+        return;
+    }
+
+    const message=
+        "Hello ARIF RESTAURANT,%0A%0A"+
+        "I would like to reserve a table.%0A%0A"+
+        "Name: "+name+"%0A"+
+        "Phone: "+phone+"%0A"+
+        "Date: "+date+"%0A"+
+        "Guests: "+guests+"%0A"+
+        "Time: "+time;
+
+    window.open(
+        "https://wa.me/8801234567890?text="+message,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+REVEAL ANIMATION
+========================= */
+
+const observer=
+    new IntersectionObserver(
+        entries=>{
+
+            entries.forEach(entry=>{
+
+                if(entry.isIntersecting){
+
+                    entry.target
+                        .classList
+                        .add("visible");
+
+                }
+
+            });
+
+        },
+        {
+            threshold:.12
+        }
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(el=>{
+        observer.observe(el);
+    });
+
+
+/* =========================
+MOBILE NAV CLOSE
+========================= */
+
+document
+    .querySelectorAll(".nav-links a")
+    .forEach(link=>{
+
+        link.addEventListener("click",()=>{
+
+            document
+                .getElementById("navLinks")
+                .classList
+                .remove("show");
+
+        });
+
+    });
+
+
+/* =========================
+ESC
+========================= */
+
+document.addEventListener("keydown",e=>{
+
+    if(e.key==="Escape"){
+
+        closeCart();
+        closeReservation();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
